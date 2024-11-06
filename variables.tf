@@ -43,3 +43,20 @@ variable "image_name" {
   description = "The name of the image"
   type        = string
 }
+
+variable "organization_id" {
+  description = "The organization ID"
+  type        = string
+}
+
+variable "project_name" {
+  description = "The Google Cloud project name"
+  type        = string
+  
+}
+
+
+variable "billing_account_id" {
+  description = "The billing account ID"
+  type        = string
+}
