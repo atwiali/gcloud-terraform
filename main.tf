@@ -1,3 +1,7 @@
+provider "google" {
+  project = var.project_id
+  region  = var.region
+}
 module "project" {
   source            = "./modules/project"
   project_name      = var.project_name
@@ -10,12 +14,7 @@ module "service_account" {
   source      = "./modules/service_account"
   account_id  = var.account_id
   display_name = var.display_name
-}
-
-module "iam_roles" {
-  source               = "./modules/iam_roles"
-  project_id           = module.project.project_id
-  service_account_email = module.service_account.service_account_email
+  project_id = var.project_id
 }
 
 module "artifact_registry" {

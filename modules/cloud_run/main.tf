@@ -1,8 +1,7 @@
 resource "google_cloud_run_service" "cloud_run_service" {
   name       = var.service_name
   location   = var.region
-  provider   = google.starlake_dev
-  depends_on = [null_resource.docker_tag_push]
+  project = var.project_id
 
   template {
     spec {
