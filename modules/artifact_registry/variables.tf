@@ -17,3 +17,7 @@ variable "format" {
   type        = string
   description = "The format of the Artifact Registry repository"
 }
+variable "project_id" {
+  type        = string
+  description = "The format of the Artifact Registry repository"
+}
