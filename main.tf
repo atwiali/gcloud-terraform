@@ -10,7 +10,12 @@ module "project" {
   billing_account_id = var.billing_account_id
 }
 
-
+module "service_account" {
+  source      = "./modules/service_account"
+  account_id  = var.account_id
+  display_name = var.display_name
+  project_id = var.project_id
+}
 
 module "artifact_registry" {
   source         = "./modules/artifact_registry"
